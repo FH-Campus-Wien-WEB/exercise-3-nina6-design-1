@@ -1,20 +1,24 @@
 body {
-  font-family: "Trebuchet MS", sans-serif;
-  background-color: brown;
-  color: beige;
+  font-family: Copperplate, "Copperplate Gothic Light", serif;
+  background-color: grey;
+  color: white;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
 }
 
-main {
-  color: #333;
-}
-
+/* Buttons global */
 button {
-    padding: 4px;
-    border-width: 1px;
-    border-radius: 4px;
-    font-size: 105%;
+  background-color: #5a5a5a; 
+  color: darkred; 
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: none;
+  font-size: 0.9em;
+  font-family: Copperplate, "Copperplate Gothic Light", serif;
+  cursor: pointer;
 }
 
 button:hover {
-  background-color: darkgray;
+  background-color: #777;
 }

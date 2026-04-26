@@ -5,73 +5,126 @@ h1 {
   margin: 8px 0px;
 }
 
-/* Constrain the page to the viewport */
 html, body {
   height: 100vh;
+  margin: 0; /* remove unwanted scroll */
 }
 
-/* Center the nav's header and list */
-nav {
+header {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
-/* navigation buttons have full width */
-nav button {
-  width: 100%;
+nav {
+  display: flex;
+  flex-direction: column;
 }
 
-/* Remove unnecessary space and bullets from the lists */
+nav ul {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
+}
+
+nav button {
+  width: 100%;
+  color: white;
+}
+
 ul {
   padding: 0px;
   margin: 16px;
   list-style-type: none;
 }
 
-/* Task 2.1. Lay out the childs of the 'body' using Grid Template Areas. */
+/* G R I D */
 
+/* Assign grid areas */
+header { grid-area: h; }
+nav { grid-area: n; }
+main { grid-area: m; }
+footer { grid-area: f; }
 
-/* Task 3.1. Make the header element a flex container and center its children
-   vertically and horizontally.
- */
+/* Desktop layout */
+@media (min-width: 768px) {
+  body {
+    display: grid;
 
+    grid-template-columns: 220px 1fr;
+    grid-template-rows: auto 1fr auto;
 
-/* Task 3.2. Make the list items of the unordered list in the nav element a flex container, 
-   use column direction and center the child items
- */
+    grid-template-areas:
+      "h h"
+      "n m"
+      "f f";
 
-/* Task 3.3. Make the main element a Flexbox container */
-
-
-/* Task 3.4. Make the footer's ul a Flexbox container */
-
-
-/* From here on styling from exercise 1 */
-img {
-  border-radius: 12px;
+    height: 100vh;
+  }
 }
 
+/* main scrolls, footer stays visible */
+main {
+  overflow-y: auto;
+  padding: 10px;
+}
+
+
+/* Movies container */
+#movies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Movie card */
 article {
-  background-color: lightgray;
-  border-radius: 16px;
-  padding: 16px;
-  width: 384px;
-  margin: 8px;
+  background-color: #2e2e2e;
+  border-radius: 10px;
+  padding: 15px;
+  border: 1px solid #444;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.4);
+
+  width: 300px;
+  box-sizing: border-box;
 }
 
-a {
-  color: beige;
+/* Title */
+article h1 {
+  text-align: center;
+  margin-bottom: 10px;
 }
 
+/* Image */
+img {
+  border-radius: 10px;
+  max-width: 100%;
+  margin: 10px auto;
+  display: block;
+}
+
+/* Text */
+article p {
+  margin: 5px 0;
+}
+
+/* Genres */
 span {
-  margin-right: 4px;
+  margin-right: 6px;
 }
 
 .genre {
-  padding: 4px 8px;
-  border: solid black 1px;
-  border-radius: 6px;
-  background-color: darkgray;
-  font-weight: bold;
+  background-color: #5a5a5a;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 20px;
+  display: inline-block;
+  font-size: 0.9em;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
